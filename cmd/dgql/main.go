@@ -10,10 +10,10 @@ import (
 	"regexp"
 	"strings"
 
-	dfuse "github.com/dfuse-io/client-go"
 	"github.com/dfuse-io/logging"
 	"github.com/lithammer/dedent"
 	"github.com/spf13/cobra"
+	dfuse "github.com/zhangqwesc/client-go"
 	"go.uber.org/zap"
 )
 
@@ -54,12 +54,12 @@ var flagInsecure *bool
 var flagPlainText *bool
 var flagRaw *bool
 
-var traceEnabled = logging.IsTraceEnabled("dgql", "github.com/dfuse-io/client-go/cmd/dgql")
+var traceEnabled = logging.IsTraceEnabled("dgql", "github.com/zhangqwesc/client-go/cmd/dgql")
 var zlog = zap.NewNop()
 
 func main() {
 	if traceEnabled {
-		zlog = logging.NewSimpleLogger("dgql", "github.com/dfuse-io/client-go/cmd/dgql")
+		zlog = logging.NewSimpleLogger("dgql", "github.com/zhangqwesc/client-go/cmd/dgql")
 	}
 
 	flagAPIKey = cmd.PersistentFlags().StringP("api-key", "a", "", "The dfuse API key to use to connect to the endpoint, if empty, assumes the endpoint is not authenticated")

@@ -1,4 +1,4 @@
-module github.com/dfuse-io/client-go
+module github.com/zhangqwesc/client-go
 
 go 1.13
 

@@ -4,7 +4,7 @@ A GraphQL client library to consume dfuse API <https://dfuse.io> ([dfuse docs](h
 
 ## Installation
 
-    go get github.com/dfuse-io/client-go
+    go get github.com/zhangqwesc/client-go
 
 ## Features
 

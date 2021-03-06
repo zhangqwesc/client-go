@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	dfuse "github.com/dfuse-io/client-go"
+	dfuse "github.com/zhangqwesc/client-go"
 )
 
 func ExampleClient_GetAPITokenInfo() {
