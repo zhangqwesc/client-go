@@ -74,7 +74,11 @@ func NewInMemoryAPITokenStore() *InMemoryAPITokenStore {
 }
 
 func (s *InMemoryAPITokenStore) Get(ctx context.Context) (*APITokenInfo, error) {
-	return s.active.Load().(*APITokenInfo), nil
+	val := s.active.Load()
+	if val == nil {
+		return nil, nil
+	}
+	return val.(*APITokenInfo), nil
 }
 
 func (s *InMemoryAPITokenStore) Set(ctx context.Context, token *APITokenInfo) error {
